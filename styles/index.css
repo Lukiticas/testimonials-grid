@@ -1,0 +1,341 @@
+/* RESETING EVERYTHING */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*  UNIVERSAL  */
+
+:root {
+  --bg-violet: rgb(117, 65, 200);
+  --bg-gray: rgb(72, 85, 106);
+  --bg-black: rgb(25, 33, 46);
+  --bg-white: rgb(255, 255, 255);
+  --wld-primary: rgb(255, 255, 255);
+  --wld-secundary: rgb(207, 207, 207);
+  --wld-terciary: rgb(236, 242, 248);
+  --title-fs: 1.7rem;
+  --p-fs: 1.08rem;
+  --name-fs: 1.2rem;
+  --undername-fs: 0.9rem;
+  --line-height: 1.3;
+  font-size: 13px;
+}
+
+/* TYPOGRAPHY */
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.testimonial__creator--info span,
+.testimonial__body p,
+.testimonial__creator--info h3 {
+  font-weight: 500;
+}
+
+.testimonial__creator--info h3,
+.testimonial__creator--info span {
+  line-height: calc(var(--line-height) - 0.3);
+}
+
+.testimonial__creator--info h3 {
+  font-size: var(--name-fs);
+}
+
+.testimonial__creator--info span {
+  font-size: var(--undername-fs);
+}
+
+.testimonial__body h2 {
+  z-index: 1;
+  font-weight: 600;
+  line-height: var(--line-height);
+  font-size: var(--title-fs);
+}
+
+.testimonial__body p {
+  line-height: calc(var(--line-height) + 0.2);
+  font-size: var(--p-fs);
+}
+
+/* COLORS */
+
+body {
+  background-color: var(--wld-terciary);
+}
+
+.testimonial__creator--info span,
+.testimonial__body p {
+  color: var(--wld-secundary);
+}
+
+.testimonial__body h2 {
+  color: var(--wld-primary);
+}
+
+.testimonial {
+  color: var(--wld-terciary);
+}
+
+.purple {
+  --outline-color: var(--bg-gray);
+  --bg: var(--bg-violet);
+  background-color: var(--bg);
+}
+
+.white {
+  --wld-primary: var(--bg-gray);
+  --wld-secundary: var(--bg-gray);
+  --wld-terciary: var(--bg-black);
+  --outline-color: var(--bg-white);
+  --bg: var(--bg-white);
+  background-color: var(--bg);
+}
+
+.black {
+  --outline-color: var(--bg-violet);
+  --bg: var(--bg-black);
+  background-color: var(--bg);
+}
+
+.gray {
+  --outline-color: var(--bg-gray);
+  --bg: var(--bg-gray);
+  background-color: var(--bg);
+}
+
+/* LAYOUT */
+
+/* PARENT */
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  max-width: 100vw;
+  padding: 1rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+  grid-template-areas: "one one two five" "three four four five";
+  gap: 2rem;
+}
+
+/* CARDS */
+
+.testimonial {
+  overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1.8rem;
+  border-radius: 0.7rem;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.testimonial__creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.1rem;
+}
+
+.testimonial__creator img {
+  margin-right: 1.4rem;
+  max-width: 2.2rem;
+  border-radius: 50vw;
+  outline: 0.2rem solid var(--outline-color);
+}
+
+.testimonial__body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.quotation {
+  position: relative;
+}
+
+.quotation::after {
+  content: url("../assets/images/bg-pattern-quotation.svg");
+  position: absolute;
+  right: 20%;
+  transform: scale(1.5);
+  opacity: 0.6;
+}
+
+blockquote p::before {
+  content: "\201C";
+}
+
+blockquote p::after {
+  content: "\201D";
+}
+
+/* grid areas */
+
+.testimonial:nth-child(1) {
+  grid-area: one;
+}
+
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+  grid-area: four;
+}
+
+.testimonial:nth-child(5) {
+  grid-area: five;
+}
+
+/* ANIMATIONS */
+
+.testimonial {
+  transition: transform 200ms ease;
+  transition: box-shadow 200ms ease;
+}
+
+.testimonial-grid {
+  animation: appear 240ms linear;
+}
+
+@keyframes appear {
+  100% {
+    transform: scale(100%);
+  }
+  80% {
+    transform: scale(80%);
+  }
+  60% {
+    transform: scale(60%);
+  }
+  40% {
+    transform: scale(40%);
+  }
+  20% {
+    transform: scale(20%);
+  }
+  0% {
+    transform: scale(0%);
+  }
+}
+
+/* EVENTS */
+
+.testimonial:hover,
+.testimonial:focus {
+  outline: none;
+  cursor: pointer;
+  transform: scale(1.02);
+  filter: contrast(1.2);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 58px 70px 20px;
+}
+
+.testimonial:active {
+  transform: rotate(3deg);
+}
+
+/* media querys */
+
+@media (max-width: 1150px) {
+  body {
+    padding: 1.5rem;
+  }
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 20rem);
+    grid-template-areas: "one one two" "three four four" "five five five";
+  }
+}
+
+@media (max-width: 850px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 20rem);
+    grid-template-areas: "one one" "two three" "four five";
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(1, 100%);
+    grid-template-areas: "one" "two" "three" "four" "five";
+  }
+}
