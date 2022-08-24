@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here we go](https://www.frontendmentor.io/solutions/testimonials-with-a-nice-touch-3-r1DqS-gORj)
+- Live Site URL: [click heree](https://lukiticas.github.io/testimonials-grid/)
 
 ## My process
 
