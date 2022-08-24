@@ -132,7 +132,8 @@ body {
 /* COLORS */
 
 body {
-  background-color: var(--wld-terciary);
+  background-color: #acd2f8;
+  background-image: linear-gradient(62deg, #acd2f8 0%, #e0c3fc 100%);
 }
 
 .testimonial__creator--info span,
@@ -149,7 +150,7 @@ body {
 }
 
 .purple {
-  --outline-color: var(--bg-gray);
+  --outline-color: rgb(151, 90, 244);
   --bg: var(--bg-violet);
   background-color: var(--bg);
 }
@@ -274,28 +275,38 @@ blockquote p::after {
   transition: box-shadow 200ms ease;
 }
 
+.testimonial__creator--info h3 {
+  transition: color 400ms ease;
+}
+
 .testimonial-grid {
-  animation: appear 240ms linear;
+  animation: appear 340ms linear;
 }
 
 @keyframes appear {
   100% {
     transform: scale(100%);
+    opacity: 1;
   }
   80% {
     transform: scale(80%);
+    opacity: 0.8;
   }
   60% {
     transform: scale(60%);
+    opacity: 0.6;
   }
   40% {
     transform: scale(40%);
+    opacity: 0.4;
   }
   20% {
     transform: scale(20%);
+    opacity: 0.2;
   }
   0% {
     transform: scale(0%);
+    opacity: 0;
   }
 }
 
@@ -312,6 +323,12 @@ blockquote p::after {
 
 .testimonial:active {
   transform: rotate(3deg);
+}
+
+.testimonial__creator--info h3:hover,
+:focus {
+  cursor: pointer;
+  color: rgb(151, 90, 244);
 }
 
 /* media querys */
